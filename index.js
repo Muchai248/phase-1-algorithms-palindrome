@@ -1,29 +1,40 @@
-function isPalindrome(word) {
+//function isPalindrome(word) {
   // Write your algorithm here
-  return word === word.split("").reverse().join("");
+  //return word === word.split("").reverse().join("");
+//}
+function reverseString(word) {
+  // create an array from the input string
+  const wordArray = word.split("");
+  // reverse the array
+  const reversedWordArray = wordArray.reverse();
+  // create a string from the reversed array
+  const reversedWord = reversedWordArray.join("");
+  // return the reversed string
+  return reversedWord;
 }
 
-/* 
-  Add your pseudocode here
-  create a function that has a parameter word
-  and return true if word is a palindrome, false otherwise
+function isPalindrome(word) {
+  // reverse the input string
+  const reversedWord = reverseString(word);
+  // if the reversed string is the same as the input
+    return word === reversedWord
+  }
+
+
+/* This is a pseudocode 
+if the reversed string === input //true
+if the reversed string !=== input //false
 */
 
 /*
   Add written explanation of your solution here
-  to the problem statement
-  and to the tests
-  You can run `node index.js` to view these console logs
-  to help you debug your solution
-  You can run `node index.js` to view these console logs
-  to help you debug your solution
- 
-
+  when a word is equal to itself when reversed it should show a boolean true 
+  example: racecar => racecar it gives an output of true
+  when a word is not equal to itself when reversed it should show a boolean false
+  example: robot => tobor it gives an output of false
 */
-
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
+  // custom tests case are here 
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
